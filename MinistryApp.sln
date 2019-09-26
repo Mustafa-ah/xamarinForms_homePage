@@ -7,7 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinistryApp.Android", "Mini
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinistryApp.iOS", "MinistryApp\MinistryApp.iOS\MinistryApp.iOS.csproj", "{A7975280-71E4-4E91-8808-2F217CA74F34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinistryApp", "MinistryApp\MinistryApp\MinistryApp.csproj", "{7DE62660-9AC8-40B6-9590-1FB1A2E0ECB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinistryApp", "MinistryApp\MinistryApp\MinistryApp.csproj", "{7DE62660-9AC8-40B6-9590-1FB1A2E0ECB5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{29AD737E-D45B-4B1F-A6E4-54707A3AED71}"
+	ProjectSection(SolutionItems) = preProject
+		Task Sheet.txt = Task Sheet.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

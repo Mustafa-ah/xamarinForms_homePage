@@ -1,0 +1,18 @@
+Task																Estimated Time					Actual time  
+Initilize project 													2 Hr								2 Hr
+creating home page with main controls 								8 Hr								
+creating toolbar with curve 										8 hr
+bottom flating icons												2 hr
+
+shadow effect                                                       6 hr
+floating login button												4 hr
+
+data Repository														6 hr
+
+all service section 												4 hr
+popular service 													4 hr
+ active service                                                     5 hr
+ completed service 													5 hr
+ 
+ media                                                               4 hr
+ offices 															6 hr	
