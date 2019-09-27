@@ -4,7 +4,10 @@ using System.Text;
 
 namespace MinistryApp.Model
 {
-    class Service
+    public class Service
     {
+        public string Name { get; set; }
+        public string Details { get; set; }
+        public string ServiceImage { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MinistryApp.Bootstrapping;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,10 +11,15 @@ namespace MinistryApp
         public App()
         {
             InitializeComponent();
+            InitializeApp();
 
-            MainPage = new Views.HomePage();
+            MainPage = new Views.HomeView();
         }
 
+        private void InitializeApp()
+        {
+            AppContainer.RegisterDependencies();
+        }
         protected override void OnStart()
         {
             // Handle when your app starts

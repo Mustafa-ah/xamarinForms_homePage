@@ -2,14 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:customcontrol="clr-namespace:MinistryApp.CustomControl"
-             x:Class="MinistryApp.Views.HomePage">
+             x:Class="MinistryApp.Views.HomeView">
     <ContentPage.Content>
         <AbsoluteLayout>
             <!--  main content -->
             <ScrollView  AbsoluteLayout.LayoutFlags="All"
                         AbsoluteLayout.LayoutBounds="0,0,1,1">
-                <Grid HorizontalOptions="FillAndExpand" BackgroundColor="Gray">
+                <Grid HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
@@ -30,6 +31,33 @@
                             <Image HeightRequest="20" WidthRequest="20" Source="right_arrow.png" Margin="0, 0, 20, 0" />
                         </StackLayout>
                     </customcontrol:RoundedView>
+                    
+                    
+                    
+                    
+                    <!-- ................ popular services repeater view  .................. -->
+                    <customcontrol:RepeaterView Grid.Row="2"
+                                                ItemsSource="{Binding PopularServices}"
+                                                HorizontalOptions="FillAndExpand"
+                                                Margin="10,10,10,10"
+                                                VerticalOptions="FillAndExpand">
+                        <customcontrol:RepeaterView.ItemTemplate>
+                            <DataTemplate >
+                                <ViewCell>
+                                    <customcontrol:RoundedView HeightRequest="100" BorderColor="Gray"
+                                           BorderRadius="12"
+                                           BorderThickness="1"
+                                      BackgroundColor="White">
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                            <Image Source="{Binding image}" HeightRequest="80" WidthRequest="80"/>
+                                            <Label Text="{Binding Details}" TextColor="Gray"/>
+                                        </StackLayout>
+                                    </customcontrol:RoundedView>
+                                </ViewCell>
+                            </DataTemplate>
+                        </customcontrol:RepeaterView.ItemTemplate>
+                    </customcontrol:RepeaterView>
+                    
                 </Grid>
             </ScrollView>
 
@@ -56,10 +84,10 @@
 
             <!--  bottom view -->
             <AbsoluteLayout  AbsoluteLayout.LayoutFlags="All"
-                        AbsoluteLayout.LayoutBounds="0,1,1,0.15">
+                        AbsoluteLayout.LayoutBounds="0,1,1,0.13">
 
                 <!--  transparent background -->
-                <StackLayout BackgroundColor="White" Opacity="0.4"
+                <StackLayout BackgroundColor="White" Opacity="0.5"
                              AbsoluteLayout.LayoutBounds="0,0,1,1"
                              AbsoluteLayout.LayoutFlags="All"></StackLayout>
 
