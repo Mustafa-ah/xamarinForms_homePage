@@ -11,7 +11,7 @@ namespace MinistryApp
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new Views.HomePage();
         }
 
         protected override void OnStart()

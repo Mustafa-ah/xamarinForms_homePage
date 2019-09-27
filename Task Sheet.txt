@@ -1,3 +1,6 @@
+
+please open this file on visual studio or sublime text editor to be correctly formatted
+
 Task																Estimated Time					Actual time  
 Initilize project 													2 Hr								2 Hr
 creating home page with main controls 								8 Hr								

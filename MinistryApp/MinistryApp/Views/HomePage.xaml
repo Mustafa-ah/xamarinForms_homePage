@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MinistryApp.Views.HomePage">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <!--  main content -->
+            <ScrollView BackgroundColor="Yellow" AbsoluteLayout.LayoutFlags="All"
+                        AbsoluteLayout.LayoutBounds="0,0,1,1">
+                
+            </ScrollView>
+
+            <!--  header view -->
+            <Grid BackgroundColor="Gray" AbsoluteLayout.LayoutFlags="All"
+                        AbsoluteLayout.LayoutBounds="0,0,1,0.25">
+                
+            </Grid>
+
+            <!--  bottom view -->
+            <AbsoluteLayout  AbsoluteLayout.LayoutFlags="All"
+                        AbsoluteLayout.LayoutBounds="0,1,1,0.15">
+
+                <!--  transparent background -->
+                <StackLayout BackgroundColor="Gray" Opacity="0.2"
+                             AbsoluteLayout.LayoutBounds="0,0,1,1"
+                             AbsoluteLayout.LayoutFlags="All"></StackLayout>
+
+                <!--  4 icons -->
+                <StackLayout AbsoluteLayout.LayoutBounds="0,0,0.25,0.7" BackgroundColor="Red"
+                             AbsoluteLayout.LayoutFlags="All"></StackLayout>
+
+                <StackLayout AbsoluteLayout.LayoutBounds="0.33,0,0.25,0.7" BackgroundColor="Green"
+                             AbsoluteLayout.LayoutFlags="All"></StackLayout>
+
+                <StackLayout AbsoluteLayout.LayoutBounds="0.66,0,0.25,0.7" BackgroundColor="Black"
+                             AbsoluteLayout.LayoutFlags="All"></StackLayout>
+
+                <StackLayout AbsoluteLayout.LayoutBounds="1,0,0.25,0.7" BackgroundColor="Blue"
+                             AbsoluteLayout.LayoutFlags="All"></StackLayout>
+            </AbsoluteLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
