@@ -170,4 +170,22 @@
   <ItemGroup>
     <BundleResource Include="Resources\header_bg_clear.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\right_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_alarm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_event.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_search.png" />
+  </ItemGroup>
 </Project>

@@ -1,16 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customcontrol="clr-namespace:MinistryApp.CustomControl"
              x:Class="MinistryApp.Views.HomePage">
     <ContentPage.Content>
         <AbsoluteLayout>
             <!--  main content -->
-            <ScrollView BackgroundColor="Yellow" AbsoluteLayout.LayoutFlags="All"
+            <ScrollView  AbsoluteLayout.LayoutFlags="All"
                         AbsoluteLayout.LayoutBounds="0,0,1,1">
-                <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="Gray">
-                    <Image Source="header_bg_clear.png"  HorizontalOptions="FillAndExpand" Aspect="Fill"
-                        HeightRequest="160"/>
-                </StackLayout>
+                <Grid HorizontalOptions="FillAndExpand" BackgroundColor="Gray">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Source="header_bg_clear.png"  HorizontalOptions="FillAndExpand" Aspect="Fill"
+                        HeightRequest="200"/>
+                    
+                    <!-- login button-->
+                    <customcontrol:RoundedView HeightRequest="80" BorderColor="Gray" Grid.Row="1" Margin="30, -50, 30, 20"
+                                           BorderRadius="80"
+                                           BorderThickness="1"
+                                      BackgroundColor="White">
+                        <StackLayout Orientation="Horizontal">
+                            <Image HeightRequest="40" WidthRequest="40" Source="ic_user.png" Margin="20, 0,0,0" />
+                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                                <Label Text="Login" TextColor="Black" FontSize="Medium"  FontAttributes="Bold"/>
+                                <Label Text="Or Register in Few steps" TextColor="Black" FontSize="Micro" />
+                            </StackLayout>
+                            <Image HeightRequest="20" WidthRequest="20" Source="right_arrow.png" Margin="0, 0, 20, 0" />
+                        </StackLayout>
+                    </customcontrol:RoundedView>
+                </Grid>
             </ScrollView>
 
             <!--  header view -->
@@ -22,7 +42,9 @@
                 <Image Source="ic_menu.png" AbsoluteLayout.LayoutFlags="All"
                         AbsoluteLayout.LayoutBounds="0,0.7,0.2,0.2"/>
 
-                <Label Text="welcome to" TextColor="White" AbsoluteLayout.LayoutFlags="All" HorizontalTextAlignment="Center"
+                <Label Text="welcome to" TextColor="White" AbsoluteLayout.LayoutFlags="All"
+                       FontAttributes="Bold" 
+                       HorizontalTextAlignment="Center"
                        AbsoluteLayout.LayoutBounds="0, 0.6, 1, 0.2"/>
 
                 <Label Text="Ministry Of Education" TextColor="White" AbsoluteLayout.LayoutFlags="All" HorizontalTextAlignment="Center"
@@ -37,22 +59,30 @@
                         AbsoluteLayout.LayoutBounds="0,1,1,0.15">
 
                 <!--  transparent background -->
-                <StackLayout BackgroundColor="Gray" Opacity="0.2"
+                <StackLayout BackgroundColor="White" Opacity="0.4"
                              AbsoluteLayout.LayoutBounds="0,0,1,1"
                              AbsoluteLayout.LayoutFlags="All"></StackLayout>
 
                 <!--  4 icons -->
-                <StackLayout AbsoluteLayout.LayoutBounds="0,0,0.25,0.7" BackgroundColor="Red"
-                             AbsoluteLayout.LayoutFlags="All"></StackLayout>
+                <StackLayout AbsoluteLayout.LayoutBounds="0,0,0.25,0.7" 
+                             AbsoluteLayout.LayoutFlags="All">
+                    <Image HeightRequest="30" WidthRequest="30" Source="ic_home.png" />
+                </StackLayout>
 
-                <StackLayout AbsoluteLayout.LayoutBounds="0.33,0,0.25,0.7" BackgroundColor="Green"
-                             AbsoluteLayout.LayoutFlags="All"></StackLayout>
+                <StackLayout AbsoluteLayout.LayoutBounds="0.33,0,0.25,0.7" 
+                             AbsoluteLayout.LayoutFlags="All">
+                    <Image HeightRequest="30" WidthRequest="30" Source="ic_alarm.png" />
+                </StackLayout>
 
-                <StackLayout AbsoluteLayout.LayoutBounds="0.66,0,0.25,0.7" BackgroundColor="Black"
-                             AbsoluteLayout.LayoutFlags="All"></StackLayout>
+                <StackLayout AbsoluteLayout.LayoutBounds="0.66,0,0.25,0.7" 
+                             AbsoluteLayout.LayoutFlags="All">
+                    <Image HeightRequest="30" WidthRequest="30" Source="ic_search.png" />
+                </StackLayout>
 
-                <StackLayout AbsoluteLayout.LayoutBounds="1,0,0.25,0.7" BackgroundColor="Blue"
-                             AbsoluteLayout.LayoutFlags="All"></StackLayout>
+                <StackLayout AbsoluteLayout.LayoutBounds="1,0,0.25,0.7"
+                             AbsoluteLayout.LayoutFlags="All">
+                    <Image HeightRequest="30" WidthRequest="30" Source="ic_event.png" />
+                </StackLayout>
             </AbsoluteLayout>
         </AbsoluteLayout>
     </ContentPage.Content>

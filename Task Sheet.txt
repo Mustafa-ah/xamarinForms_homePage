@@ -8,7 +8,7 @@ creating toolbar with curve 										8 hr								2 hr
 bottom flating icons												2 hr
 
 shadow effect                                                       6 hr
-floating login button												4 hr
+floating login button												4 hr								3 hr
 
 data Repository														6 hr
 
