@@ -40,7 +40,7 @@
                         AbsoluteLayout.LayoutBounds="0,0,1,1"/>
 
                 <Image Source="ic_menu.png" AbsoluteLayout.LayoutFlags="All"
-                        AbsoluteLayout.LayoutBounds="0,0.7,0.2,0.2"/>
+                        AbsoluteLayout.LayoutBounds="0,0.7,0.3,0.3"/>
 
                 <Label Text="welcome to" TextColor="White" AbsoluteLayout.LayoutFlags="All"
                        FontAttributes="Bold" 
@@ -51,7 +51,7 @@
                        AbsoluteLayout.LayoutBounds="0, 0.8, 1, 0.2"/>
 
                 <Image Source="ic_settings.png" AbsoluteLayout.LayoutFlags="All"
-                        AbsoluteLayout.LayoutBounds="1,0.7,0.2,0.2"/>
+                        AbsoluteLayout.LayoutBounds="1,0.7,0.3,0.3"/>
             </AbsoluteLayout>
 
             <!--  bottom view -->
