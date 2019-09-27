@@ -3,8 +3,8 @@ please open this file on visual studio or sublime text editor to be correctly fo
 
 Task																Estimated Time					Actual time  
 Initilize project 													2 Hr								2 Hr
-creating home page with main controls 								8 Hr								
-creating toolbar with curve 										8 hr
+creating home page with main controls 								8 Hr								3 hr
+creating toolbar with curve 										8 hr								2 hr
 bottom flating icons												2 hr
 
 shadow effect                                                       6 hr

@@ -7,14 +7,30 @@
             <!--  main content -->
             <ScrollView BackgroundColor="Yellow" AbsoluteLayout.LayoutFlags="All"
                         AbsoluteLayout.LayoutBounds="0,0,1,1">
-                
+                <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="Gray">
+                    <Image Source="header_bg_clear.png"  HorizontalOptions="FillAndExpand" Aspect="Fill"
+                        HeightRequest="160"/>
+                </StackLayout>
             </ScrollView>
 
             <!--  header view -->
-            <Grid BackgroundColor="Gray" AbsoluteLayout.LayoutFlags="All"
-                        AbsoluteLayout.LayoutBounds="0,0,1,0.25">
-                
-            </Grid>
+            <AbsoluteLayout AbsoluteLayout.LayoutFlags="WidthProportional"
+                        AbsoluteLayout.LayoutBounds="0,0,1, 160">
+                <Image Source="header_bg.png" AbsoluteLayout.LayoutFlags="All" Aspect="Fill"
+                        AbsoluteLayout.LayoutBounds="0,0,1,1"/>
+
+                <Image Source="ic_menu.png" AbsoluteLayout.LayoutFlags="All"
+                        AbsoluteLayout.LayoutBounds="0,0.7,0.2,0.2"/>
+
+                <Label Text="welcome to" TextColor="White" AbsoluteLayout.LayoutFlags="All" HorizontalTextAlignment="Center"
+                       AbsoluteLayout.LayoutBounds="0, 0.6, 1, 0.2"/>
+
+                <Label Text="Ministry Of Education" TextColor="White" AbsoluteLayout.LayoutFlags="All" HorizontalTextAlignment="Center"
+                       AbsoluteLayout.LayoutBounds="0, 0.8, 1, 0.2"/>
+
+                <Image Source="ic_settings.png" AbsoluteLayout.LayoutFlags="All"
+                        AbsoluteLayout.LayoutBounds="1,0.7,0.2,0.2"/>
+            </AbsoluteLayout>
 
             <!--  bottom view -->
             <AbsoluteLayout  AbsoluteLayout.LayoutFlags="All"
