@@ -11,9 +11,9 @@ namespace MinistryApp.Repositories
     {
         private List<Service> services = new List<Service>()
             {
-                new Service{Name = "service" , RequstNumber= 38432, Status =1, RequstName ="Perfect for guests who’re looking for that little bit of extra luxury", Date = DateTime.Now, ServiceImage = "ic_school.jpg", Details = "The page you requested could not be found. Try refining your search, or use the navigation above to locate the post."},
-                new Service{Name = "service" , ServiceImage = "ic_bus.jpg", Details = "Besides sanitary facilities our Comfotels contain two boxspring beds, two chairs and a table, a heater in the bathroom, "},
-                new Service{Name = "service" , ServiceImage = "ic_grad.jpg", Details = "The Comfotel is the first foldable hotelroom in the world. It can be set-up within minutes by hand. The rooms "},
+                new Service{Name = "General Education" , RequstNumber= 38432, Status =1, RequstName ="Perfect for guests who’re looking for that little bit of extra luxury", Date = DateTime.Now, ServiceImage = "ic_school.jpg", Details = "The page you requested could not be found. Try refining your search, or use the navigation above to locate the post."},
+                new Service{Name = "Higher Education" , ServiceImage = "ic_bus.jpg", Details = "Besides sanitary facilities our Comfotels contain two boxspring beds, two chairs and a table, a heater in the bathroom, "},
+                new Service{Name = "Certificates" , ServiceImage = "ic_grad.jpg", Details = "The Comfotel is the first foldable hotelroom in the world. It can be set-up within minutes by hand. The rooms "},
                 new Service{Name = "service" , ServiceImage = "ic_school.jpg", Details = "The page you requested could not be found. Try refining your search, or use the navigation above to locate the post."},
                 new Service{Name = "service" , ServiceImage = "ic_bus.jpg", Details = "Surprise your guests with a unique glamping experience! The modern and colourful foldable Comfotels are equipped with a shower, toilet and sink and provided with all comfort. Perfect for guests who’re looking for that little bit of extra luxury and privacy. Or even crew that needs to stay on site for a longer period."},
                   new Service{Name = "service" , ServiceImage = "", Details = "The page you requested could not be found. Try refining your search, or use the navigation above to locate the post."},
