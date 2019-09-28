@@ -13,30 +13,27 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
                     <Image Grid.Row="0" Source="header_bg_clear.png"  HorizontalOptions="FillAndExpand" Aspect="Fill"
-                        HeightRequest="200"/>
+                        HeightRequest="180"/>
                     
                     <!-- login button-->
-                    <customcontrol:RoundedView HeightRequest="80" BorderColor="Gray" Grid.Row="1" Margin="30, -50, 30, 20"
-                                           BorderRadius="80"
-                                           BorderThickness="1"
-                                      BackgroundColor="White">
+                    <Frame Grid.Row="1" HasShadow="True" CornerRadius="40" Margin="30, -50, 30, 20">
                         <StackLayout Orientation="Horizontal">
-                            <Image HeightRequest="40" WidthRequest="40" Source="ic_user.png" Margin="20, 0,0,0" />
+                            <Image HeightRequest="45" WidthRequest="45" Source="ic_user.png" Margin="10, 0,5,0" />
                             <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
                                 <Label Text="Login" TextColor="Black" FontSize="Medium"  FontAttributes="Bold"/>
                                 <Label Text="Or Register in Few steps" TextColor="Black" FontSize="Micro" />
                             </StackLayout>
-                            <Image HeightRequest="20" WidthRequest="20" Source="right_arrow.png" Margin="0, 0, 20, 0" />
+                            <Image HeightRequest="20" WidthRequest="20" Source="right_arrow.png" Margin="0, 0, 10, 0" />
                         </StackLayout>
-                    </customcontrol:RoundedView>
-                    
-                    
-                    
-                    
+                    </Frame>
+
+
                     <!-- ................ popular services repeater view  .................. -->
-                    <customcontrol:RepeaterView Grid.Row="2"
+                    <customcontrol:RepeaterView Grid.Row="4"
                                                 ItemsSource="{Binding PopularServices}"
                                                 HorizontalOptions="FillAndExpand"
                                                 Margin="10,10,10,10"
@@ -44,13 +41,12 @@
                         <customcontrol:RepeaterView.ItemTemplate>
                             <DataTemplate >
                                 <ViewCell>
-                                    <customcontrol:RoundedView HeightRequest="100" BorderColor="Gray"
-                                           BorderRadius="12"
-                                           BorderThickness="1"
+                                    <customcontrol:RoundedView HeightRequest="100" BorderColor="Black" Margin="0,5,0,5"
+                                           BorderRadius="15"
                                       BackgroundColor="White">
                                         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                                             <Image Source="{Binding image}" HeightRequest="80" WidthRequest="80"/>
-                                            <Label Text="{Binding Details}" TextColor="Gray"/>
+                                            <Label Text="{Binding Details}" TextColor="Gray" Margin="5"/>
                                         </StackLayout>
                                     </customcontrol:RoundedView>
                                 </ViewCell>
@@ -63,7 +59,7 @@
 
             <!--  header view -->
             <AbsoluteLayout AbsoluteLayout.LayoutFlags="WidthProportional"
-                        AbsoluteLayout.LayoutBounds="0,0,1, 160">
+                        AbsoluteLayout.LayoutBounds="0,0,1, 140">
                 <Image Source="header_bg.png" AbsoluteLayout.LayoutFlags="All" Aspect="Fill"
                         AbsoluteLayout.LayoutBounds="0,0,1,1"/>
 
@@ -84,7 +80,7 @@
 
             <!--  bottom view -->
             <AbsoluteLayout  AbsoluteLayout.LayoutFlags="All"
-                        AbsoluteLayout.LayoutBounds="0,1,1,0.13">
+                        AbsoluteLayout.LayoutBounds="0,1,1,0.12">
 
                 <!--  transparent background -->
                 <StackLayout BackgroundColor="White" Opacity="0.5"
@@ -92,24 +88,36 @@
                              AbsoluteLayout.LayoutFlags="All"></StackLayout>
 
                 <!--  4 icons -->
-                <StackLayout AbsoluteLayout.LayoutBounds="0,0,0.25,0.7" 
-                             AbsoluteLayout.LayoutFlags="All">
-                    <Image HeightRequest="30" WidthRequest="30" Source="ic_home.png" />
+                <StackLayout AbsoluteLayout.LayoutBounds="0.1,0,60,60" 
+                             AbsoluteLayout.LayoutFlags="PositionProportional">
+                    <Frame Grid.Row="1" HasShadow="True" CornerRadius="30" WidthRequest="60" HeightRequest="60" BackgroundColor="White">
+                        <Image HeightRequest="30" WidthRequest="30" Source="ic_home.png" Aspect="Fill"/>
+                    </Frame>
+                    
                 </StackLayout>
 
-                <StackLayout AbsoluteLayout.LayoutBounds="0.33,0,0.25,0.7" 
-                             AbsoluteLayout.LayoutFlags="All">
-                    <Image HeightRequest="30" WidthRequest="30" Source="ic_alarm.png" />
+                <StackLayout AbsoluteLayout.LayoutBounds="0.36,0,60,60" 
+                             AbsoluteLayout.LayoutFlags="PositionProportional">
+                    <Frame Grid.Row="1" HasShadow="True" CornerRadius="30" WidthRequest="60" HeightRequest="60" BackgroundColor="White">
+                        <Image HeightRequest="30" WidthRequest="30" Source="ic_alarm.png" Aspect="Fill"/>
+                    </Frame>
+                    
                 </StackLayout>
 
-                <StackLayout AbsoluteLayout.LayoutBounds="0.66,0,0.25,0.7" 
-                             AbsoluteLayout.LayoutFlags="All">
-                    <Image HeightRequest="30" WidthRequest="30" Source="ic_search.png" />
+                <StackLayout AbsoluteLayout.LayoutBounds="0.63,0,60,60" 
+                             AbsoluteLayout.LayoutFlags="PositionProportional">
+                    <Frame Grid.Row="1" HasShadow="True" CornerRadius="30" WidthRequest="60" HeightRequest="60" BackgroundColor="White">
+                        <Image HeightRequest="30" WidthRequest="30" Source="ic_search.png" Aspect="Fill"/>
+                    </Frame>
+                    
                 </StackLayout>
 
-                <StackLayout AbsoluteLayout.LayoutBounds="1,0,0.25,0.7"
-                             AbsoluteLayout.LayoutFlags="All">
-                    <Image HeightRequest="30" WidthRequest="30" Source="ic_event.png" />
+                <StackLayout AbsoluteLayout.LayoutBounds="0.9,0,60,60"
+                             AbsoluteLayout.LayoutFlags="PositionProportional">
+                    <Frame Grid.Row="1" HasShadow="True" CornerRadius="30" WidthRequest="60" HeightRequest="60" BackgroundColor="White">
+                        <Image HeightRequest="30" WidthRequest="30" Source="ic_event.png" Aspect="Fill" />
+                    </Frame>
+                    
                 </StackLayout>
             </AbsoluteLayout>
         </AbsoluteLayout>
