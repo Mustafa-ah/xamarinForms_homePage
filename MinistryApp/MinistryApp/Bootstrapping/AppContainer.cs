@@ -17,6 +17,7 @@ namespace MinistryApp.Bootstrapping
             var builder = new ContainerBuilder();
 
             builder.RegisterType<ServiceRepository>().As<IServiceRepository>();
+            builder.RegisterType<MediaReopsitory>().As<IMediaReopsitory>();
             builder.RegisterType<HomeViewModel>();
 
 

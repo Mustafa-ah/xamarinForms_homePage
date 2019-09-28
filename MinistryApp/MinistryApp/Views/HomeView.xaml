@@ -2,11 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:customcontrol="clr-namespace:MinistryApp.CustomControl"
+             xmlns:Converters="clr-namespace:MinistryApp.Converters"
              x:Class="MinistryApp.Views.HomeView">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Converters:DateToDayConverter x:Key="DateToDay"/>
+            <Converters:DateToMonthConverter x:Key="DateToMonth"/>
+            <Converters:DateToYearConverter x:Key="DateToYear"/>
+            <Converters:DateToStringConverter x:Key="DateToString"/>
+            <Converters:SerciveStatusConverter x:Key="SerciveStatus"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <AbsoluteLayout>
             <!--  main content -->
-            <ScrollView  AbsoluteLayout.LayoutFlags="All"
+            <ScrollView  AbsoluteLayout.LayoutFlags="All" VerticalScrollBarVisibility="Never"
                         AbsoluteLayout.LayoutBounds="0,0,1,1">
                 <Grid HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
                     <Grid.RowDefinitions>
@@ -31,28 +42,236 @@
                         </StackLayout>
                     </Frame>
 
+                    <!-- ................ All services collection view  .................. -->
+                    <StackLayout Grid.Row="2" Margin="20,0,20,40">
+                        <StackLayout Orientation="Horizontal" HeightRequest="30" >
+                            <Label Text="All Services" FontSize="Medium" FontAttributes="Bold" TextColor="Black" HorizontalOptions="FillAndExpand"/>
+                            <customcontrol:RoundedView BorderRadius="30" WidthRequest="70"  HeightRequest="20" BackgroundColor="#CCB572">
+                                <Label Text="View All" FontSize="Micro"   TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                            </customcontrol:RoundedView>
+                            
+                        </StackLayout>
+
+
+                    </StackLayout>
 
                     <!-- ................ popular services repeater view  .................. -->
-                    <customcontrol:RepeaterView Grid.Row="4"
+                    <StackLayout Grid.Row="3"  Margin="20,0,20,40">
+                        <StackLayout Orientation="Horizontal" HeightRequest="30"  Margin="0,0,0,10">
+                            <Label Text="Pupular Services" FontSize="Medium" FontAttributes="Bold" TextColor="Black" HorizontalOptions="FillAndExpand"/>
+                            <customcontrol:RoundedView BorderRadius="30" WidthRequest="70"  HeightRequest="20" BackgroundColor="#CCB572">
+                                <Label Text="View All" FontSize="Micro"   TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                            </customcontrol:RoundedView>
+
+                        </StackLayout>
+                        <customcontrol:RepeaterView 
                                                 ItemsSource="{Binding PopularServices}"
                                                 HorizontalOptions="FillAndExpand"
-                                                Margin="10,10,10,10"
                                                 VerticalOptions="FillAndExpand">
-                        <customcontrol:RepeaterView.ItemTemplate>
-                            <DataTemplate >
-                                <ViewCell>
-                                    <customcontrol:RoundedView HeightRequest="100" BorderColor="Black" Margin="0,5,0,5"
+                            <customcontrol:RepeaterView.ItemTemplate>
+                                <DataTemplate >
+                                    <ViewCell>
+                                        <customcontrol:RoundedView HeightRequest="100" BorderColor="Black" Margin="0,5,0,5"
                                            BorderRadius="15"
                                       BackgroundColor="White">
-                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                                            <Image Source="{Binding image}" HeightRequest="80" WidthRequest="80"/>
-                                            <Label Text="{Binding Details}" TextColor="Gray" Margin="5"/>
-                                        </StackLayout>
-                                    </customcontrol:RoundedView>
-                                </ViewCell>
-                            </DataTemplate>
-                        </customcontrol:RepeaterView.ItemTemplate>
-                    </customcontrol:RepeaterView>
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                                <Image Source="{Binding ServiceImage}" HeightRequest="80" WidthRequest="80"/>
+                                                <Label Text="{Binding Details}" TextColor="Gray" Margin="5"/>
+                                            </StackLayout>
+                                        </customcontrol:RoundedView>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </customcontrol:RepeaterView.ItemTemplate>
+                        </customcontrol:RepeaterView>
+                    </StackLayout>
+
+                    <!-- ................ my active services view  .................. -->
+                    <StackLayout Grid.Row="4" Margin="20,0,20,40">
+                        <StackLayout Orientation="Horizontal" HeightRequest="30" Margin="0,0,0,10">
+                            <Label Text="My Active Services" FontSize="Medium" FontAttributes="Bold" TextColor="Black" HorizontalOptions="FillAndExpand"/>
+                            <customcontrol:RoundedView BorderRadius="30" WidthRequest="70"  HeightRequest="20" BackgroundColor="#CCB572">
+                                <Label Text="View All" FontSize="Micro"   TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                            </customcontrol:RoundedView>
+                        </StackLayout>
+
+                        <customcontrol:RoundedView  BorderColor="Black" BorderRadius="15"
+                                      BackgroundColor="White">
+                            <StackLayout>
+                                
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" 
+                                             Margin="5"
+                                             HeightRequest="60">
+                                    <Image Source="ic_bin.png" HeightRequest="40" WidthRequest="40"/>
+                                    <StackLayout>
+                                        <Label TextColor="Gray" Text="Request number"/>
+                                        <Label TextColor="Gray" Text="{Binding ActiveService.RequstNumber}"/>
+                                    </StackLayout>
+                                    <StackLayout WidthRequest="1" BackgroundColor="LightGray" Margin="10,5,10,5"/>
+
+                                    <Image Source="ic_clock.png" HeightRequest="40" WidthRequest="40"/>
+                                    <StackLayout>
+                                        <Label Text="Date" TextColor="Gray"/>
+                                        <Label TextColor="Black" Text="{Binding ActiveService.Date, Converter={StaticResource DateToString}}"/>
+                                    </StackLayout>
+                                </StackLayout>
+
+
+                                <StackLayout HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="5" BackgroundColor="LightGray"/>
+
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" 
+                                             Margin="5"
+                                             HeightRequest="60">
+                                    <Image Source="ic_doc.png" HeightRequest="40" WidthRequest="40"/>
+                                    <StackLayout>
+                                        <Label Text="Request Name" TextColor="Gray"/>
+                                        <Label Text="{Binding ActiveService.RequstName}" TextColor="Black" FontSize="Small"/>
+                                    </StackLayout>
+                                   
+                                </StackLayout>
+
+
+                                <StackLayout HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="5" BackgroundColor="LightGray"/>
+
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" 
+                                             Margin="5"
+                                             HeightRequest="60">
+                                    <Image Source="ic_write.png" HeightRequest="40" WidthRequest="40"/>
+                                    <StackLayout>
+                                        <Label Text="STATUS" TextColor="Gray"/>
+                                        <Label Text="{Binding ActiveService.Status, Converter={StaticResource SerciveStatus}}" TextColor="Black" FontSize="Small"/>
+                                    </StackLayout>
+
+                                </StackLayout>
+
+
+                                <StackLayout HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="5" BackgroundColor="LightGray"/>
+
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" 
+                                             Margin="5"
+                                             HeightRequest="60">
+                                    <Image Source="ic_ceck.png" HeightRequest="40" WidthRequest="40"/>
+                                    <StackLayout>
+                                        <Label Text="Action" TextColor="Gray"/>
+                                        <Label Text="Upload Copy Of Equivalence Certificate" TextColor="Orange" FontSize="Small"/>
+                                    </StackLayout>
+
+                                </StackLayout>
+                            </StackLayout>
+                        </customcontrol:RoundedView>
+                    </StackLayout>
+
+                    <!-- ................ my completed services  view  .................. -->
+                    <StackLayout Grid.Row="5" Margin="20,0,20,40">
+                        <StackLayout Orientation="Horizontal" HeightRequest="30" Margin="0,0,0,10">
+                            <Label Text="My Completed Services" FontSize="Medium" FontAttributes="Bold" TextColor="Black" HorizontalOptions="FillAndExpand"/>
+                            <customcontrol:RoundedView BorderRadius="30" WidthRequest="70"  HeightRequest="20" BackgroundColor="#CCB572">
+                                <Label Text="View All" FontSize="Micro"   TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                            </customcontrol:RoundedView>
+                        </StackLayout>
+
+                        <customcontrol:RoundedView  BorderColor="Black" BorderRadius="15"
+                                      BackgroundColor="White">
+                            <StackLayout>
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" 
+                                             Margin="5"
+                                             HeightRequest="60">
+                                    <Image Source="ic_bin.png" HeightRequest="40" WidthRequest="40"/>
+                                    <StackLayout>
+                                        <Label TextColor="Gray" Text="Request number"/>
+                                        <Label TextColor="Gray" Text="{Binding ActiveService.RequstNumber}"/>
+                                    </StackLayout>
+                                    <StackLayout WidthRequest="1" BackgroundColor="LightGray" Margin="10,5,10,5"/>
+
+                                    <Image Source="ic_clock.png" HeightRequest="40" WidthRequest="40"/>
+                                    <StackLayout>
+                                        <Label Text="Date" TextColor="Gray"/>
+                                        <Label TextColor="Black" Text="{Binding ActiveService.Date, Converter={StaticResource DateToString}}"/>
+                                    </StackLayout>
+                                </StackLayout>
+
+
+                                <StackLayout HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="5" BackgroundColor="LightGray"/>
+
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" 
+                                             Margin="5"
+                                             HeightRequest="60">
+                                    <Image Source="ic_doc.png" HeightRequest="40" WidthRequest="40"/>
+                                    <StackLayout>
+                                        <Label Text="Request Name" TextColor="Gray"/>
+                                        <Label Text="{Binding ActiveService.RequstName}" TextColor="Black" FontSize="Small"/>
+                                    </StackLayout>
+
+                                </StackLayout>
+
+
+                                <StackLayout HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="5" BackgroundColor="LightGray"/>
+
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" 
+                                             Margin="5"
+                                             HeightRequest="60">
+                                    <Image Source="ic_write.png" HeightRequest="40" WidthRequest="40"/>
+                                    <StackLayout>
+                                        <Label Text="STATUS" TextColor="Gray"/>
+                                        <Label Text="{Binding ActiveService.Status, Converter={StaticResource SerciveStatus}}" TextColor="Black" FontSize="Small"/>
+                                    </StackLayout>
+
+                                </StackLayout>
+
+                            </StackLayout>
+                        </customcontrol:RoundedView>
+                    </StackLayout>
+
+                    <!-- ................ Media repeater view  .................. -->
+                    <StackLayout Grid.Row="6" Margin="20,0,20,40">
+                        <StackLayout Orientation="Horizontal" HeightRequest="30" Margin="0,0,0,10">
+                            <Label Text="Media" FontSize="Medium" FontAttributes="Bold" TextColor="Black" HorizontalOptions="FillAndExpand"/>
+                            <customcontrol:RoundedView BorderRadius="30" WidthRequest="70"  HeightRequest="20" BackgroundColor="#CCB572">
+                                <Label Text="View All" FontSize="Micro"   TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                            </customcontrol:RoundedView>
+                           
+                        </StackLayout>
+                        <customcontrol:RepeaterView 
+                                                ItemsSource="{Binding TopMedia}"
+                                                HorizontalOptions="FillAndExpand"
+                                                VerticalOptions="FillAndExpand">
+                            <customcontrol:RepeaterView.ItemTemplate>
+                                <DataTemplate >
+                                    <ViewCell>
+                                        <Grid HeightRequest="200" Margin="0, 5, 0, 5">
+                                            
+                                            <Image Aspect="Fill"  Source="{Binding Image}" />
+
+                                            <StackLayout Orientation="Horizontal" VerticalOptions="End">
+                                                <Label FontSize="12"  TextColor="White" Text="{Binding Description}" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" />
+                                                <customcontrol:RoundedView BorderColor="White" Margin="10,10,10,10" BorderRadius="15" BackgroundColor="Transparent" BorderThickness="2">
+                                                    <StackLayout Spacing="0" Margin="12" VerticalOptions="EndAndExpand" WidthRequest="30">
+                                                        <Label FontSize="16"  TextColor="White" Text="{Binding Date, Converter= {StaticResource DateToDay}}" />
+                                                        <Label FontSize="14"  TextColor="White" Text="{Binding Date, Converter= {StaticResource DateToMonth}}" />
+                                                        <Label FontSize="12"  TextColor="White" Text="{Binding Date, Converter= {StaticResource DateToYear}}" />
+                                                    </StackLayout>
+                                                </customcontrol:RoundedView>
+                                            </StackLayout>
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </customcontrol:RepeaterView.ItemTemplate>
+                        </customcontrol:RepeaterView>
+                    </StackLayout>
+
+                    <!-- ................ Offices view  .................. -->
+                    <StackLayout Grid.Row="7" Margin="20,0,20,40">
+                        <StackLayout Orientation="Horizontal" HeightRequest="30" >
+                            <Label Text="Offices" FontSize="Medium" FontAttributes="Bold" TextColor="Black" HorizontalOptions="FillAndExpand"/>
+                           
+                        </StackLayout>
+                    </StackLayout>
+                    
                     
                 </Grid>
             </ScrollView>
@@ -63,19 +282,19 @@
                 <Image Source="header_bg.png" AbsoluteLayout.LayoutFlags="All" Aspect="Fill"
                         AbsoluteLayout.LayoutBounds="0,0,1,1"/>
 
-                <Image Source="ic_menu.png" AbsoluteLayout.LayoutFlags="All"
-                        AbsoluteLayout.LayoutBounds="0,0.7,0.3,0.3"/>
+                <Image Source="ic_menu.png" AbsoluteLayout.LayoutFlags="PositionProportional"
+                        AbsoluteLayout.LayoutBounds="0.01,0.7,40,40"/>
 
                 <Label Text="welcome to" TextColor="White" AbsoluteLayout.LayoutFlags="All"
-                       FontAttributes="Bold" 
+                       FontAttributes="Bold"  FontSize="16"
                        HorizontalTextAlignment="Center"
                        AbsoluteLayout.LayoutBounds="0, 0.6, 1, 0.2"/>
 
-                <Label Text="Ministry Of Education" TextColor="White" AbsoluteLayout.LayoutFlags="All" HorizontalTextAlignment="Center"
+                <Label Text="Ministry Of Education" TextColor="White" FontSize="18" AbsoluteLayout.LayoutFlags="All" HorizontalTextAlignment="Center"
                        AbsoluteLayout.LayoutBounds="0, 0.8, 1, 0.2"/>
 
-                <Image Source="ic_settings.png" AbsoluteLayout.LayoutFlags="All"
-                        AbsoluteLayout.LayoutBounds="1,0.7,0.3,0.3"/>
+                <Image Source="ic_settings.png" AbsoluteLayout.LayoutFlags="PositionProportional"
+                        AbsoluteLayout.LayoutBounds="0.99,0.7,40,40"/>
             </AbsoluteLayout>
 
             <!--  bottom view -->
