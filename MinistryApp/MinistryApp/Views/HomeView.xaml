@@ -46,12 +46,32 @@
                     <StackLayout Grid.Row="2" Margin="20,0,20,40">
                         <StackLayout Orientation="Horizontal" HeightRequest="30" Margin="0,0,0,10">
                             <Label Text="All Services" FontSize="Medium" FontAttributes="Bold" TextColor="Black" HorizontalOptions="FillAndExpand"/>
-                            <customcontrol:RoundedView BorderRadius="30" WidthRequest="70"  HeightRequest="20" BackgroundColor="#CCB572">
+                            <customcontrol:RoundedView  WidthRequest="70"  HeightRequest="20" BackgroundColor="#CCB572">
+                                <customcontrol:RoundedView.BorderRadius>
+                                    <OnPlatform x:TypeArguments="x:Single" Android="30" iOS="10"/>
+                                </customcontrol:RoundedView.BorderRadius>
+                               
                                 <Label Text="View All" FontSize="Micro"   TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                             </customcontrol:RoundedView>
                         </StackLayout>
-
-                        <CollectionView ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" ItemSizingStrategy="MeasureFirstItem" ItemsSource="{Binding Destinations}" HeightRequest="120">
+                        <ScrollView HorizontalOptions="FillAndExpand" Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalScrollBarVisibility="Never">
+                            <StackLayout Spacing="0" BindableLayout.ItemsSource="{Binding AllServices}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <customcontrol:RoundedView HeightRequest="100" BorderColor="Black" Margin="0,5,0,5"
+                                           BorderRadius="15"
+                                      BackgroundColor="White">
+                                            <StackLayout >
+                                                <Image Source="{Binding ServiceImage}" HeightRequest="80" WidthRequest="80"/>
+                                                <Label Text="{Binding Name}" TextColor="Gray" Margin="5"/>
+                                            </StackLayout>
+                                        </customcontrol:RoundedView>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+                        </ScrollView>
+                        <!--
+                        <CollectionView ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" ItemSizingStrategy="MeasureFirstItem" ItemsSource="{Binding AllServices}" HeightRequest="120">
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>
                                     <customcontrol:RoundedView HeightRequest="100" BorderColor="Black" Margin="0,5,0,5"
@@ -65,14 +85,17 @@
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
                         </CollectionView>
-
+-->
                      </StackLayout>
 
                     <!-- ................ popular services repeater view  .................. -->
                     <StackLayout Grid.Row="3"  Margin="20,0,20,40">
                         <StackLayout Orientation="Horizontal" HeightRequest="30"  Margin="0,0,0,10">
                             <Label Text="Pupular Services" FontSize="Medium" FontAttributes="Bold" TextColor="Black" HorizontalOptions="FillAndExpand"/>
-                            <customcontrol:RoundedView BorderRadius="30" WidthRequest="70"  HeightRequest="20" BackgroundColor="#CCB572">
+                            <customcontrol:RoundedView  WidthRequest="70"  HeightRequest="20" BackgroundColor="#CCB572">
+                                <customcontrol:RoundedView.BorderRadius>
+                                    <OnPlatform x:TypeArguments="x:Single" Android="30" iOS="10"/>
+                                </customcontrol:RoundedView.BorderRadius>
                                 <Label Text="View All" FontSize="Micro"   TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                             </customcontrol:RoundedView>
 
@@ -102,7 +125,10 @@
                     <StackLayout Grid.Row="4" Margin="20,0,20,40">
                         <StackLayout Orientation="Horizontal" HeightRequest="30" Margin="0,0,0,10">
                             <Label Text="My Active Services" FontSize="Medium" FontAttributes="Bold" TextColor="Black" HorizontalOptions="FillAndExpand"/>
-                            <customcontrol:RoundedView BorderRadius="30" WidthRequest="70"  HeightRequest="20" BackgroundColor="#CCB572">
+                            <customcontrol:RoundedView WidthRequest="70"  HeightRequest="20" BackgroundColor="#CCB572">
+                                <customcontrol:RoundedView.BorderRadius>
+                                    <OnPlatform x:TypeArguments="x:Single" Android="30" iOS="10"/>
+                                </customcontrol:RoundedView.BorderRadius>
                                 <Label Text="View All" FontSize="Micro"   TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                             </customcontrol:RoundedView>
                         </StackLayout>
@@ -180,7 +206,10 @@
                     <StackLayout Grid.Row="5" Margin="20,0,20,40">
                         <StackLayout Orientation="Horizontal" HeightRequest="30" Margin="0,0,0,10">
                             <Label Text="My Completed Services" FontSize="Medium" FontAttributes="Bold" TextColor="Black" HorizontalOptions="FillAndExpand"/>
-                            <customcontrol:RoundedView BorderRadius="30" WidthRequest="70"  HeightRequest="20" BackgroundColor="#CCB572">
+                            <customcontrol:RoundedView WidthRequest="70"  HeightRequest="20" BackgroundColor="#CCB572">
+                                <customcontrol:RoundedView.BorderRadius>
+                                    <OnPlatform x:TypeArguments="x:Single" Android="30" iOS="10"/>
+                                </customcontrol:RoundedView.BorderRadius>
                                 <Label Text="View All" FontSize="Micro"   TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                             </customcontrol:RoundedView>
                         </StackLayout>
@@ -244,7 +273,10 @@
                     <StackLayout Grid.Row="6" Margin="20,0,20,40">
                         <StackLayout Orientation="Horizontal" HeightRequest="30" Margin="0,0,0,10">
                             <Label Text="Media" FontSize="Medium" FontAttributes="Bold" TextColor="Black" HorizontalOptions="FillAndExpand"/>
-                            <customcontrol:RoundedView BorderRadius="30" WidthRequest="70"  HeightRequest="20" BackgroundColor="#CCB572">
+                            <customcontrol:RoundedView WidthRequest="70"  HeightRequest="20" BackgroundColor="#CCB572">
+                                <customcontrol:RoundedView.BorderRadius>
+                                    <OnPlatform x:TypeArguments="x:Single" Android="30" iOS="10"/>
+                                </customcontrol:RoundedView.BorderRadius>
                                 <Label Text="View All" FontSize="Micro"   TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                             </customcontrol:RoundedView>
                            
