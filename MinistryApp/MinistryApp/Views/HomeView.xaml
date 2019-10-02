@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:customcontrol="clr-namespace:MinistryApp.CustomControl"
              xmlns:Converters="clr-namespace:MinistryApp.Converters"
+             xmlns:renderedviews="clr-namespace:Sharpnado.Presentation.Forms.RenderedViews;assembly=Sharpnado.Presentation.Forms"
              x:Class="MinistryApp.Views.HomeView">
 
     <ContentPage.Resources>
@@ -21,6 +22,8 @@
                         AbsoluteLayout.LayoutBounds="0,0,1,1">
                 <Grid HorizontalOptions="FillAndExpand" BackgroundColor="LightGray">
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
@@ -51,7 +54,7 @@
                             </customcontrol:RoundedView>
                         </StackLayout>
 
-                        <CollectionView ItemsLayout="HorizontalList"  ItemSizingStrategy="MeasureFirstItem" ItemsSource="{Binding AllServices}" HeightRequest="120">
+                        <!--<CollectionView ItemsLayout="HorizontalList"  ItemSizingStrategy="MeasureFirstItem" ItemsSource="{Binding AllServices}" HeightRequest="120">
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>
                                     <customcontrol:RoundedView HeightRequest="100" BorderColor="Black" Margin="5,5,5,5"
@@ -64,10 +67,10 @@
                                     </customcontrol:RoundedView>
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
-                        </CollectionView>
+                        </CollectionView>-->
                         
-                        <!--
-                        <ScrollView HorizontalOptions="FillAndExpand" Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalScrollBarVisibility="Never">
+                        
+                        <!--<ScrollView HorizontalOptions="FillAndExpand" Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalScrollBarVisibility="Never">
                             <StackLayout Spacing="0" BindableLayout.ItemsSource="{Binding AllServices}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                                 <BindableLayout.ItemTemplate>
                                     <DataTemplate>
@@ -82,11 +85,32 @@
                                     </DataTemplate>
                                 </BindableLayout.ItemTemplate>
                             </StackLayout>
-                        </ScrollView>
-                        
-                        
--->
-                     </StackLayout>
+                        </ScrollView>-->
+
+                        <renderedviews:HorizontalListView CollectionPadding="0,8"
+                            ItemSpacing="8"
+                            ItemHeight="144"
+                            ItemWidth="144"
+                            ItemsSource="{Binding AllServices}"
+                            SnapStyle="Center">                 
+                            <renderedviews:HorizontalListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <customcontrol:RoundedView HeightRequest="100" BorderColor="Black" Margin="0,5,0,5"
+                                           BorderRadius="15"
+                                      BackgroundColor="White">
+                                            <StackLayout >
+                                                <Image Source="{Binding ServiceImage}" HeightRequest="80" WidthRequest="80"/>
+                                                <Label Text="{Binding Name}" TextColor="Gray" Margin="5"/>
+                                            </StackLayout>
+                                        </customcontrol:RoundedView>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </renderedviews:HorizontalListView.ItemTemplate>
+
+                        </renderedviews:HorizontalListView>
+
+                    </StackLayout>
 
                     <!-- ................ popular services repeater view  .................. -->
                     <StackLayout Grid.Row="3"  Margin="20,0,20,40">
@@ -342,7 +366,7 @@
                 <!--  4 icons -->
                 <StackLayout AbsoluteLayout.LayoutBounds="0.1,0,60,60" 
                              AbsoluteLayout.LayoutFlags="PositionProportional">
-                    <Frame Grid.Row="1" HasShadow="True" CornerRadius="30" WidthRequest="60" HeightRequest="60" BackgroundColor="White">
+                    <Frame  HasShadow="True" CornerRadius="30" WidthRequest="60" HeightRequest="60" BackgroundColor="White">
                         <Image HeightRequest="30" WidthRequest="30" Source="ic_home.png" Aspect="Fill"/>
                     </Frame>
                     
@@ -350,7 +374,7 @@
 
                 <StackLayout AbsoluteLayout.LayoutBounds="0.36,0,60,60" 
                              AbsoluteLayout.LayoutFlags="PositionProportional">
-                    <Frame Grid.Row="1" HasShadow="True" CornerRadius="30" WidthRequest="60" HeightRequest="60" BackgroundColor="White">
+                    <Frame  HasShadow="True" CornerRadius="30" WidthRequest="60" HeightRequest="60" BackgroundColor="White">
                         <Image HeightRequest="30" WidthRequest="30" Source="ic_alarm.png" Aspect="Fill"/>
                     </Frame>
                     
@@ -358,7 +382,7 @@
 
                 <StackLayout AbsoluteLayout.LayoutBounds="0.63,0,60,60" 
                              AbsoluteLayout.LayoutFlags="PositionProportional">
-                    <Frame Grid.Row="1" HasShadow="True" CornerRadius="30" WidthRequest="60" HeightRequest="60" BackgroundColor="White">
+                    <Frame  HasShadow="True" CornerRadius="30" WidthRequest="60" HeightRequest="60" BackgroundColor="White">
                         <Image HeightRequest="30" WidthRequest="30" Source="ic_search.png" Aspect="Fill"/>
                     </Frame>
                     
@@ -366,7 +390,7 @@
 
                 <StackLayout AbsoluteLayout.LayoutBounds="0.9,0,60,60"
                              AbsoluteLayout.LayoutFlags="PositionProportional">
-                    <Frame Grid.Row="1" HasShadow="True" CornerRadius="30" WidthRequest="60" HeightRequest="60" BackgroundColor="White">
+                    <Frame  HasShadow="True" CornerRadius="30" WidthRequest="60" HeightRequest="60" BackgroundColor="White">
                         <Image HeightRequest="30" WidthRequest="30" Source="ic_event.png" Aspect="Fill" />
                     </Frame>
                     
