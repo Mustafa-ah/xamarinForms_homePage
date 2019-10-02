@@ -87,8 +87,8 @@
                             </StackLayout>
                         </ScrollView>-->
 
-                        <renderedviews:HorizontalListView CollectionPadding="0,8"
-                            ItemSpacing="8"
+                        <renderedviews:HorizontalListView 
+                            ItemSpacing="3"
                             ItemHeight="144"
                             ItemWidth="144"
                             ItemsSource="{Binding AllServices}"
@@ -96,12 +96,12 @@
                             <renderedviews:HorizontalListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
-                                        <customcontrol:RoundedView HeightRequest="100" BorderColor="Black" Margin="0,5,0,5"
+                                        <customcontrol:RoundedView HeightRequest="100" BorderColor="Black" Margin="5,5,5,5"
                                            BorderRadius="15"
                                       BackgroundColor="White">
                                             <StackLayout >
-                                                <Image Source="{Binding ServiceImage}" HeightRequest="80" WidthRequest="80"/>
-                                                <Label Text="{Binding Name}" TextColor="Gray" Margin="5"/>
+                                                <Image Source="{Binding ServiceImage}" HeightRequest="60" WidthRequest="60"/>
+                                                <Label Text="{Binding Name}" TextColor="Black" Margin="5"/>
                                             </StackLayout>
                                         </customcontrol:RoundedView>
                                     </ViewCell>
